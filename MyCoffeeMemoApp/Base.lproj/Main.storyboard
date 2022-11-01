@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,21 +27,34 @@
         <!--View Controller-->
         <scene sceneID="KW8-cY-kOL">
             <objects>
-                <viewController id="QOK-ty-0Qu" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="QOK-ty-0Qu" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6t-5P-NQl">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="HJ7-mS-Mu2">
-                                <rect key="frame" x="-118" y="-380" width="390" height="844"/>
+                                <rect key="frame" x="-119" y="-380" width="391" height="844"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <viewLayoutGuide key="safeArea" id="vGU-6o-w0M"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crb-HH-ykT">
+                                <rect key="frame" x="158" y="519" width="74" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="g6f-CF-rjV" kind="show" id="rMX-zp-gnv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yZ8-0t-wLn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yZ8-0t-wLn" firstAttribute="trailing" secondItem="crb-HH-ykT" secondAttribute="trailing" constant="158" id="R23-g4-d4Q"/>
+                            <constraint firstItem="crb-HH-ykT" firstAttribute="leading" secondItem="yZ8-0t-wLn" secondAttribute="leading" constant="158" id="ZRl-eT-Qom"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="U7F-AM-pUk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ki-1R-Dw2" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,13 +63,32 @@
         <!--View Controller-->
         <scene sceneID="GRj-ZV-7Zp">
             <objects>
-                <viewController id="g6f-CF-rjV" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="g6f-CF-rjV" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1M-fe-v4Y">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="axQ-VV-3qs">
+                                <rect key="frame" x="172" y="452" width="46" height="30"/>
+                                <menu key="menu" id="48z-XX-J3Z">
+                                    <children>
+                                        <command title="Item 1" id="weZ-Ee-BDl"/>
+                                        <command title="Item 2" id="1VK-bT-U6X"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Hhe-3S-z0B" kind="show" id="DAI-lI-QSd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rLP-MV-PRa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="axQ-VV-3qs" firstAttribute="centerX" secondItem="q1M-fe-v4Y" secondAttribute="centerX" constant="100" id="hZ6-EH-eKP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="del-QX-DIX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJx-K1-pow" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,13 +97,14 @@
         <!--View Controller-->
         <scene sceneID="33m-Si-fEn">
             <objects>
-                <viewController id="Hhe-3S-z0B" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Hhe-3S-z0B" customClass="ViewController" customModule="MyCoffeeMemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uNZ-i1-RkK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="o3o-bV-ufZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NuH-qC-eYI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d0-dL-Azr" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,8 +132,27 @@
                     <view key="view" contentMode="scaleToFill" id="y2n-ic-IYx">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-aa-21N">
+                                <rect key="frame" x="158" y="504" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4T-fU-m9t">
+                                <rect key="frame" x="158" y="504" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="QOK-ty-0Qu" kind="show" id="Ism-Nl-zcO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8ek-3f-vEq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8ek-3f-vEq" firstAttribute="bottom" secondItem="H4T-fU-m9t" secondAttribute="bottom" constant="271" id="cfq-AJ-zpQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sb8-Mu-taD" sceneMemberID="firstResponder"/>
